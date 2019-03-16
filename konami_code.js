@@ -4,9 +4,30 @@ function init() {
   // Write your JavaScript code inside the init() function
   const body = document.querySelector('body');
   console.log(body);
+
+  body.addEventListener('keydown', onKeyDown(e))
 }
 
 init();
+
+let index = 0;
+function onKeyDown(e)
+{
+  const key = parseInt(e.detail || e.which);
+  console.log(key);
+  
+  if (key === code[index]) {
+    index++;
+
+    if (index === code.length) {
+      alert("Hurray!");
+
+      index = 0;
+    }
+  } else {
+    index = 0;
+  }
+}
 
 /*
 // Key codes for A, B, and C keys.
